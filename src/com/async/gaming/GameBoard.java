@@ -43,7 +43,7 @@ public class GameBoard extends JPanel {
 //        All painting logic will be written here
         super.paintComponent(pen);//cleaning up everything
         pen.drawImage(backGroundImage,0,0,1500,920,null);
-        player.drawPlayer(pen);
-        enemyRock.drawEnemyRock(pen);
+        player.drawElement(pen);
+        enemyRock.drawElement(pen);
     }
 }
