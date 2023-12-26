@@ -1,5 +1,6 @@
 package com.async.gaming;
 
+import com.async.gaming.sprite.EnemyRock;
 import com.async.gaming.sprite.Player;
 
 import javax.imageio.ImageIO;
@@ -11,11 +12,13 @@ import java.io.IOException;
 public class GameBoard extends JPanel {
     BufferedImage backGroundImage;
     Player player;
+    EnemyRock enemyRock;
     Timer timer;
     public GameBoard(){
       setSize(1500,920);
       loadBackGroundImage();
       player=new Player();
+      enemyRock=new EnemyRock();
       gameLoop();
     }
 
@@ -41,6 +44,6 @@ public class GameBoard extends JPanel {
         super.paintComponent(pen);//cleaning up everything
         pen.drawImage(backGroundImage,0,0,1500,920,null);
         player.drawPlayer(pen);
-
+        enemyRock.drawEnemyRock(pen);
     }
 }
