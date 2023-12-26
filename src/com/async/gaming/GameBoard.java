@@ -1,5 +1,7 @@
 package com.async.gaming;
 
+import com.async.gaming.sprite.Player;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -8,9 +10,13 @@ import java.io.IOException;
 
 public class GameBoard extends JPanel {
     BufferedImage backGroundImage;
+    Player player;
+    Timer timer;
     public GameBoard(){
       setSize(1500,920);
       loadBackGroundImage();
+      player=new Player();
+      gameLoop();
     }
 
     private void loadBackGroundImage(){
@@ -23,11 +29,18 @@ public class GameBoard extends JPanel {
             ioException.printStackTrace();
         }
     }
+
+    private void gameLoop(){
+//        Repaint is going to call paintComponent() function
+        timer=new Timer(50,(e)->repaint());
+        timer.start();
+    }
     @Override
     public void paintComponent(Graphics pen){
 //        All painting logic will be written here
         super.paintComponent(pen);//cleaning up everything
         pen.drawImage(backGroundImage,0,0,1500,920,null);
+        player.drawPlayer(pen);
 
     }
 }

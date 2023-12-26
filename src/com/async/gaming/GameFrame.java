@@ -1,10 +1,12 @@
 package com.async.gaming;
 
+import com.async.gaming.sprite.Player;
+
 import javax.swing.*;
 
 public class GameFrame extends JFrame {
 GameBoard gameBoard;
-    public GameFrame(){
+        public GameFrame(){
         gameBoard=new GameBoard();
         setSize(1500,950);
         setResizable(false);
