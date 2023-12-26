@@ -16,6 +16,8 @@ public class EnemyRock extends Elements {
     }
 
     public void moveImage(){
+        if(y>900)
+            y=0;
         y+=speed;
     }
 
