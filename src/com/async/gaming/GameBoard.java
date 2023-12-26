@@ -12,14 +12,23 @@ import java.io.IOException;
 public class GameBoard extends JPanel {
     BufferedImage backGroundImage;
     Player player;
-    EnemyRock enemyRock;
+    EnemyRock[] enemyRocks =new EnemyRock[5];
     Timer timer;
     public GameBoard(){
       setSize(1500,920);
       loadBackGroundImage();
+        loadMultipleRocks();
       player=new Player();
-      enemyRock=new EnemyRock();
       gameLoop();
+    }
+
+    public void loadMultipleRocks(){
+        int x=400;
+        int gap=300;
+        for (int i = 0; i < enemyRocks.length; i++) {
+            enemyRocks[i]=new EnemyRock(x);
+            x+=gap;
+        }
     }
 
     private void loadBackGroundImage(){
@@ -38,12 +47,18 @@ public class GameBoard extends JPanel {
         timer=new Timer(50,(e)->repaint());
         timer.start();
     }
+
+    private void printRockEnemies(Graphics pen){
+   for(EnemyRock enemyRock :enemyRocks)
+       enemyRock.drawElement(pen);
+    }
     @Override
     public void paintComponent(Graphics pen){
 //        All painting logic will be written here
         super.paintComponent(pen);//cleaning up everything
         pen.drawImage(backGroundImage,0,0,1500,920,null);
         player.drawElement(pen);
-        enemyRock.drawElement(pen);
+        printRockEnemies(pen);
+//        enemyRock.drawElement(pen);
     }
 }
