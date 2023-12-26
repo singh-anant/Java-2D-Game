@@ -10,6 +10,8 @@ public abstract class Elements {
     int h;
     ImageIcon image;
 
+    int speed;
+
     public void drawElement(Graphics pen){
         pen.drawImage(image.getImage(),x,y,w,h,null);
     }

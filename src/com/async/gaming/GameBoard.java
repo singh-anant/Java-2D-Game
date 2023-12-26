@@ -25,9 +25,11 @@ public class GameBoard extends JPanel {
     public void loadMultipleRocks(){
         int x=400;
         int gap=300;
+        int speed=5;
         for (int i = 0; i < enemyRocks.length; i++) {
-            enemyRocks[i]=new EnemyRock(x);
+            enemyRocks[i]=new EnemyRock(x,speed);
             x+=gap;
+            speed+=5;
         }
     }
 
@@ -49,8 +51,11 @@ public class GameBoard extends JPanel {
     }
 
     private void printRockEnemies(Graphics pen){
-   for(EnemyRock enemyRock :enemyRocks)
+   for(EnemyRock enemyRock :enemyRocks){
        enemyRock.drawElement(pen);
+       enemyRock.moveImage();
+   }
+
     }
     @Override
     public void paintComponent(Graphics pen){

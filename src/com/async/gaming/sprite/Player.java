@@ -9,8 +9,8 @@ public Player(){
     w=200;
     h=300;
     x=200;
-    y=460;
-    image=new ImageIcon(Player.class.getResource("PlayerImage.gif"));
+    y=500;
+    image=new ImageIcon(Player.class.getResource("PlayerImage2.gif"));
 }
 
 
