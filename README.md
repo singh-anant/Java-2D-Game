@@ -1,4 +1,4 @@
-# Run it Up - Java 2D Gam
+# Run it Up - Java 2D Game
 
 ## Overview
 "Run it Up" is an exciting Java 2D game that challenges player to pass from enemy rocks and reach the end of the screen.
