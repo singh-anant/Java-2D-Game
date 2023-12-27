@@ -1,7 +1,6 @@
 package com.async.gaming.sprite;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class EnemyRock extends Elements {
 

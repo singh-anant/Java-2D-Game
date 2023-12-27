@@ -1,7 +1,4 @@
 package com.async.gaming;
-
-import com.async.gaming.sprite.Player;
-
 import javax.swing.*;
 
 public class GameFrame extends JFrame {

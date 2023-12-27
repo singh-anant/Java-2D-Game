@@ -1,7 +1,6 @@
 package com.async.gaming.sprite;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Player extends Elements {
 
@@ -12,6 +11,12 @@ public Player(){
     y=500;
     image=new ImageIcon(Player.class.getResource("PlayerImage2.gif"));
 }
+public void moveImage(){
+    x+=speed;
+}
 
+public boolean reachedEnd(){
+    return x>1500;
+}
 
 }
